@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+    background-color: hsl(47, 88%, 63%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-container {
+    background-color: hsl(0, 0%, 100%);
+    width: 384px;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid hsl(0, 0%, 7%);
+    box-shadow: 8px 8px 0px hsl(0, 0%, 7%);
+}
+
+.card-container>img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: hsl(47, 88%, 63%);
+    color: hsl(0, 0%, 7%);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.publish-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(0, 0%, 7%);
+    margin-bottom: 12px;
+}
+
+.card-text h1 {
+    font-size: clamp(20px, 6vw, 24px);
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: hsl(0, 0%, 7%);
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform-origin: left center;
+}
+
+.card-text h1.hover-text:hover {
+    color: hsl(47, 88%, 63%);
+    transform: scale(1.05);
+}
+
+/* Focus styles */
+.card-text h1.hover-text:focus-visible {
+    outline: 2px solid hsl(47, 88%, 63%);
+    outline-offset: 4px;
+}
+
+.card-text p {
+    font-size: clamp(14px, 4vw, 16px);
+    font-weight: 500;
+    color: hsl(0, 0%, 42%);
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.author-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: hsl(0, 0%, 7%);
+}
+
+.attribution {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    color: hsl(0, 0%, 42%);
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(0, 0%, 42%);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive hover scaling and card adjustments */
+@media (max-width: 768px) {
+    .card-text h1.hover-text:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 375px) {
+    .card-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card-text h1 {
+        font-size: 20px;
+    }
+}
+
+/* Disable hover on touch devices */
+@media (hover: none) {
+    .card-text h1.hover-text:hover {
+        transform: none;
+        color: hsl(0, 0%, 7%);
+    }
+}
